@@ -58,7 +58,7 @@ module.exports = {
         let {date, service} = req.body
 
         sequelize.query(`
-        INSERT INTO cc_appointments (client_id, date, service_type, notes, approved, completed)
+        INSERT INTO cc_appointments(client_id, date, service_type, notes, approved, completed)
         VALUES (${clientId}, '${date}', '${service}', '', false, false)
         RETURNING *;
         `)
